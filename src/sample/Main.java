@@ -21,10 +21,8 @@ public class Main extends Application {
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
     static final int ANT_COUNT = 100;
-
     ArrayList<Ant> ants;
     long lastTimestamp = 0;
-
 
     static ArrayList<Ant> createAnts() {
         ArrayList<Ant> ants = new ArrayList<Ant>();
@@ -79,13 +77,10 @@ public class Main extends Application {
         Canvas canvas = (Canvas) scene.lookup("#canvas");
         GraphicsContext context = canvas.getGraphicsContext2D();
         Label fpsLabel = (Label) scene.lookup("#fps");
-
         primaryStage.setTitle("AntsJava");
         primaryStage.setScene(scene);
         primaryStage.show();
-
         ants = createAnts();
-
 
         AnimationTimer timer = new AnimationTimer() {
             @Override
@@ -98,7 +93,6 @@ public class Main extends Application {
         };
         timer.start();
     }
-
 
     public static void main(String[] args) {
         launch(args);
